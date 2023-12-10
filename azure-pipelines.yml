@@ -7,12 +7,11 @@ trigger:
   branches:
     include:
       - "*"
-
 jobs:
 - template: .azure-pipelines/build.yml
   parameters:
     arch: amd64
-    pool: 'Ubuntu-amdx64-pool'
+    pool:
       vmImage: 'ubuntu-20.04'
     codeCoverage: true
     containerImage: sonicdev-microsoft.azurecr.io:443/sonic-slave-bullseye:latest
